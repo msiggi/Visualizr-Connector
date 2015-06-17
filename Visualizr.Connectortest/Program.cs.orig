@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using Visualizr.Connector;
+
+namespace Visualizr.Connectortest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var poster = new Poster();
+<<<<<<< local
+            poster.PostErrorOccurred += poster_PostErrorOccurred;
+
+=======
+>>>>>>> other
+            var hostname = System.Net.Dns.GetHostName();
+
+            DriveInfo[] allDrives = DriveInfo.GetDrives();
+            var pValues = new List<ProcessValue>();
+
+            foreach (DriveInfo d in allDrives)
+            {
+                try
+                {
+                    var pValue = new ProcessValue(hostname, "FreeSpace Drive " + d.Name, (d.TotalFreeSpace / (1024 * 1024 * 1024)).ToString(), "demo");
+                    pValues.Add(pValue);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+
+                }
+
+            }
+
+<<<<<<< local
+            poster.PostProcessValues(pValues).Wait();
+=======
+            var state = poster.PostProcessValues(pValues);
+>>>>>>> other
+            Console.WriteLine("Fertig");
+            Console.ReadKey();
+        }
+<<<<<<< local
+
+        static void poster_PostErrorOccurred(object sender, Poster.PostErrorEventArgs e)
+        {
+            Console.WriteLine(e.PostErrorException);
+        }
+=======
+>>>>>>> other
+    }
+}

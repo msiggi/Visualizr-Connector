@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Visualizr.Connector</id>
+    <version>1.0.0</version>
+    <title>A Connector-Library for www.Visualizr.de</title>
+    <authors>Marcel Siegel</authors>
+    <owners></owners>
+    <projectUrl>http://www.visualizr.de/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Connector-Library for www.Visualizr.de. Push dynamic Values and visualize it with dynamic screens</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags></tags>
+  </metadata>
+</package>
