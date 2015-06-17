@@ -14,6 +14,8 @@ namespace Visualizr.ConnectortestPerNuget
             var poster = new Poster();
             var hostname = System.Net.Dns.GetHostName();
 
+            poster.PostErrorOccurred += Poster_PostErrorOccurred;
+
             DriveInfo[] allDrives = DriveInfo.GetDrives();
             var pValues = new List<ProcessValue>();
 
@@ -23,7 +25,7 @@ namespace Visualizr.ConnectortestPerNuget
                 {
                     if (d.IsReady)
                     {
-                        var pValue = new ProcessValue(hostname, "FreeSpace Drive " + d.Name, (d.TotalFreeSpace / (1024 * 1024 * 1024)).ToString(), "demo");
+                        var pValue = new ProcessValue(hostname, "FreeSpace Drive " + d.Name, (d.TotalFreeSpace / (1024 * 1024 * 1024)).ToString(), "visualizrdemo");
                         pValues.Add(pValue);
                     }
                 }
@@ -33,9 +35,14 @@ namespace Visualizr.ConnectortestPerNuget
                 }
             }
 
-            var state = poster.PostProcessValues(pValues);
+            var state = poster.PostProcessValuesAsync(pValues);
             Console.WriteLine("Fertig");
             Console.ReadKey();
+        }
+
+        private static void Poster_PostErrorOccurred(object sender, Poster.PostErrorEventArgs e)
+        {
+            Console.WriteLine(e.PostErrorException);
         }
     }
 }

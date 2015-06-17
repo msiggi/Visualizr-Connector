@@ -57,7 +57,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Visualizr.Connector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Visualizr.Connector.1.0.5\lib\Visualizr.Connector.dll</HintPath>
+      <HintPath>..\packages\Visualizr.Connector.1.1.0\lib\Visualizr.Connector.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
